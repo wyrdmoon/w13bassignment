@@ -3,18 +3,19 @@
     <div>
       <h1>Your Tweets</h1>
     </div>
-    <div id="tweet-container">
-      <div v-for="tweet in tweets" :key="tweet">
+    <div id="tweet-container" v-bind:class="{pagegrid: grid}">
+      <div v-for="tweet in tweets" :key="tweet.tweet">
         <p>{{tweet.tweet}}</p>
         <h2>{{tweet.Name}}</h2>
         <h2>{{tweet.date}}</h2>
       </div>
        
-       <button v-if="gridStyle" @click="gridStyle=!true">Switch to list</button>
-       <button v-else>Switch to grid</button>
-      <div v-bind:class="{gridStyle: isGrid, list: isList}"></div>
+   
+      
 
     </div>
+        <button v-if="grid" @click="grid=!grid">Switch to list</button>
+       <button v-else @click="grid=!grid">Switch to grid</button>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
   name: "page-body",
   data: function () {
     return {
+      grid: false,
       tweets: [
         { tweet: "Hello", Name: "Bill", date: "08-01-2020" },
         { tweet: "Hey", Name: "Bob", date: "09-01-2020" },
@@ -54,7 +56,10 @@ export default {
 #container-grid {
   display: grid;
 }
-
+.pagegrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr)
+}
 
 </style>
   

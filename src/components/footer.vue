@@ -1,6 +1,8 @@
 <template>
     <div>
-      
+        <h2>{{tweet.tweet}}</h2>
+        <h2>{{tweet.Name}}</h2>
+        <h2>{{tweet.date}}</h2>
 
     </div>
 </template>
