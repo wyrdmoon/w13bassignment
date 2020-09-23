@@ -55,18 +55,7 @@ export default {
   display: grid;
 }
 
-.grid-style{
-  display: grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  justify-items: center;
-  align-items: center;
-  border: 3px solid black;
-  box-shadow: 3px 6px 8px grey;
-}
-.grid-card{
-  border: 3px solid black; 
-  box-shadow: 3px 6px 8px grey; 
-}
+
 </style>
   
 
